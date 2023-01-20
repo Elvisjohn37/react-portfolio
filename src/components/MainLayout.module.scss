@@ -1,0 +1,7 @@
+@import './../utils/scss/keyframes.scss';
+
+.MainLayout {
+    @include fadeIn(1s);
+    max-width: 1400px;
+    margin: auto;
+}

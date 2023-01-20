@@ -1,0 +1,77 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/helper.scss';
+@import 'src/utils/scss/keyframes.scss';
+
+.experience {
+    min-height: 100vh;
+    padding-top: $mainNavigationHeight;
+    align-items: center;
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+
+        .introduction {
+            font-family: MontserratMedium;
+            color: darken($colors_pText, 30%);
+            font-size: 12px;
+            padding: $standardSpace * 4;
+
+            .title {
+                color: $colors_pText;
+                font-size: 16px;
+                margin-bottom: $standardSpace * 2;
+            }
+        }
+
+        .content {
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+
+            & > div {
+                font-family: MontserratMedium;
+            }
+
+            .frontend,
+            .backend {
+                box-shadow: 0px 2px 6px rgba($colors_pDark, 0.5);
+                padding: $standardSpace * 4;
+                border-radius: $borderRadius;
+                margin: $standardSpace * 2;
+                @include colors_pDark(0.2);
+                color: $colors_secondary;
+                max-width: 450px;
+
+                .technologies {
+                    display: flex;
+                    flex-flow: row wrap;
+
+                    & > .technology {
+                        margin: $standardSpace * 2;
+                        padding: $standardSpace;
+                        font-size: 12px;
+                        color: darken($colors_pText, 30%);
+
+                        & > div:nth-of-type(1) {
+                            color: $colors_pText;
+                        }
+
+                        & > div:nth-of-type(2) {
+                            margin-top: $standardSpace;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .content {
+                display: block;
+            }
+        }
+    }
+}

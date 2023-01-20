@@ -1,0 +1,108 @@
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/colors.scss';
+
+.about {
+    height: 100vh;
+    padding-top: $mainNavigationHeight;
+
+    .container {
+        display: flex;
+        height: 100%;
+
+        & > div {
+            width: 50%;
+        }
+
+        .image {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            padding-right: $standardSpace * 8;
+
+            img {
+                max-width: 400px;
+            }
+        }
+
+        .moreInfo {
+            display: flex;
+            height: fit-content;
+            font-family: MontserratMedium;
+            align-self: center;
+
+            .content {
+                box-shadow: 0px 2px 2px rgba($colors_pDark, 0.5);
+                padding: $standardSpace * 4;
+                padding-left: $standardSpace * 4;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-content: flex-start;
+                @include colors_pDark(0.2);
+                border-radius: $borderRadius * 2;
+
+                .moreInformation {
+                    font-size: 12px;
+                    color: darken($colors_pText, 30%);
+                    .title {
+                        color: $colors_pText;
+                        font-size: 16px;
+                        margin-bottom: $standardSpace;
+                    }
+                }
+                .email,
+                .mobileNumber,
+                .education {
+                    font-size: 12px;
+                    margin-top: $standardSpace * 4;
+                    color: darken($colors_pText, 30%);
+                    label {
+                        color: $colors_pText;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            display: block;
+
+            .image {
+                display: block;
+                padding: unset;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            & > div {
+                width: 100%;
+            }
+
+            .moreInfo {
+                display: block;
+
+                .content {
+                    display: block;
+                    margin: $standardSpace;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1400px) {
+            display: block;
+            .image,
+            .moreInfo {
+                height: fit-content;
+                display: block;
+                width: fit-content;
+                margin: auto;
+            }
+
+            .image {
+                padding: unset;
+            }
+        }
+    }
+}

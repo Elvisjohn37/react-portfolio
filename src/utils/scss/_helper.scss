@@ -1,0 +1,12 @@
+@mixin center($position: absolute) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: $position;
+}
+
+@mixin vCenter($position: absolute) {
+    left: 50%;
+    transform: translateX(-50%);
+    position: $position;
+}

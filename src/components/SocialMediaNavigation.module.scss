@@ -1,0 +1,31 @@
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/colors.scss';
+
+.socialMediaNavigation {
+    position: fixed;
+    bottom: $standardSpace * 2;
+    left: $standardSpace * 2;
+
+    .container {
+        padding: $standardSpace;
+
+        ul {
+            li {
+                list-style: none;
+                padding: $standardSpace;
+                cursor: pointer;
+                transition: $standardDuration;
+                border-radius: $borderRadius;
+
+                &:hover {
+                    @include colors_secondary(0.5);
+                }
+
+                svg {
+                    font-size: 25px;
+                    color: $colors_pText;
+                }
+            }
+        }
+    }
+}

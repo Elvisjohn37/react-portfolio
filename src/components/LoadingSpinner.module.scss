@@ -1,0 +1,10 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/helper.scss';
+
+.loadingSpinner {
+    @include center;
+}
+
+:export {
+    colors_primary: $colors_secondary;
+}

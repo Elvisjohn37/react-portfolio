@@ -1,0 +1,135 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/helper.scss';
+@import 'src/utils/scss/keyframes.scss';
+
+.home {
+    height: 100vh;
+    padding-top: $mainNavigationHeight;
+
+    .container {
+        max-width: 1024px;
+        margin: auto;
+        color: $colors_pText;
+        text-align: center;
+        font-family: MontserratMedium;
+        height: 100%;
+
+        .mainContent {
+            @include center;
+            span:first-of-type,
+            span:last-of-type {
+                display: block;
+            }
+            .greetings {
+                > span {
+                    display: inline-flex;
+                    opacity: 0;
+                    margin: $standardSpace * 2 0;
+                }
+
+                .im {
+                    margin: $standardSpace * 2 0;
+                    display: inline-flex;
+                    overflow: hidden;
+
+                    > span {
+                        opacity: 0;
+                    }
+                }
+
+                &.startAimation {
+                    > span {
+                        @include bounceDown;
+                        @media screen and (max-width: 400px) {
+                            @include bounceDown(1s, 'mobile');
+                        }
+                    }
+                }
+
+                &.startAimation .im span {
+                    @include slideRight(1s);
+                }
+
+                &.doneAnimation {
+                    span {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .role {
+                margin: $standardSpace * 2 0;
+                opacity: 0;
+
+                &.startAimation {
+                    @include fadeInTop(1.8s);
+                }
+
+                &.doneAnimation {
+                    opacity: 1;
+                }
+            }
+
+            h1 {
+                transform: translateX(100%);
+                opacity: 0;
+
+                &.startAimation {
+                    @include punch(1.3s, 0.5s);
+                }
+
+                &.doneAnimation {
+                    transform: unset;
+                    opacity: 1;
+                }
+            }
+
+            .itroduction {
+                margin-top: $standardSpace * 4;
+                color: rgba($colors_pText, 0.7);
+                font-weight: unset;
+                font-family: Roboto-Regular;
+                transform: translateY(100%);
+                opacity: 0;
+
+                &.startAimation {
+                    @include fadeInTop(1.9s);
+                }
+
+                &.doneAnimation {
+                    opacity: 1;
+                    transform: unset;
+                }
+            }
+
+            h1 {
+                color: $colors_secondary;
+            }
+        }
+        .about {
+            padding: $standardSpace $standardSpace * 2;
+            @include vCenter;
+            bottom: $mainNavigationHeight * 2;
+
+            .button {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            &.startAimation .button {
+                @include fadeInTop(1.9s);
+            }
+
+            &.doneAnimation .button {
+                opacity: 1;
+                transform: unset;
+            }
+
+            a {
+                color: $colors_pText;
+            }
+        }
+    }
+}

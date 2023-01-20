@@ -1,0 +1,159 @@
+@mixin fadeIn($duration: 0.3s) {
+    animation: fadeIn $duration forwards;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fadeOut($duration: 0.3s) {
+    animation: fadeOut $duration forwards;
+
+    @keyframes fadeOut {
+        from {
+            display: block;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+}
+
+@mixin ZoomIn($maxZoom: 1.5) {
+    animation: ZoomIn forwards;
+
+    @keyframes ZoomIn {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale($maxZoom);
+        }
+    }
+}
+
+@mixin fadeInTop($delay: 0s, $duration: 0.3s) {
+    animation: fadeInTop $duration forwards;
+    animation-delay: $delay;
+
+    @keyframes fadeInTop {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fadeInRight($delay: 0s, $duration: 0.3s) {
+    animation: fadeInRight $duration forwards;
+    animation-delay: $delay;
+
+    @keyframes fadeInRight {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin slideRight($delay: 0s, $duration: 0.3s) {
+    animation: slideRight $duration forwards;
+    animation-delay: $delay;
+
+    @keyframes slideRight {
+        from {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+}
+
+@function getDeviceScale($device: 'desktop') {
+    @if $device == 'desktop' {
+        @return 1;
+    } @else {
+        @return 2;
+    }
+}
+
+@mixin bounceDown($duration: 1s, $device: 'desktop') {
+    animation: bounceDown $duration forwards;
+
+    @keyframes bounceDown {
+        0% {
+            transform: translateX(-50%) scale(calc(5 / getDeviceScale($device)));
+            opacity: 0;
+        }
+        20% {
+            transform: translateX(-50%)
+                scale(calc(10 / getDeviceScale($device)));
+            opacity: 1;
+        }
+        60% {
+            transform: translateX(-50%)
+                scale(calc(10 / getDeviceScale($device)));
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0%) scale(1);
+            position: relative;
+            left: unset;
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fadeInRotate($delay: 0s, $duration: 0.3s) {
+    animation: fadeInRotate $duration forwards;
+    animation-delay: $delay;
+
+    @keyframes fadeInRotate {
+        from {
+            transform: translate(100%, 100%) rotate(135deg);
+            opacity: 0;
+        }
+        to {
+            transform: translate(0%, 0%) rotate(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin punch($delay: 0s, $duration: 1s) {
+    animation: punch $duration forwards;
+    animation-delay: $delay;
+
+    @keyframes punch {
+        0% {
+            transform: translateX(100%);
+        }
+        1% {
+            opacity: 1;
+        }
+        60% {
+            transform: translateX(-30%) scaleX(0.7);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0%) scaleX(1);
+            opacity: 1;
+        }
+    }
+}

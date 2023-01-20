@@ -1,0 +1,44 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/helper.scss';
+@import 'src/utils/scss/keyframes.scss';
+
+.button {
+    transition: 0.3s;
+    border-radius: $borderRadius;
+    display: block;
+    width: fit-content;
+
+    &.primary {
+        border: unset;
+        border-radius: $borderRadius;
+        @include colors_secondary;
+    }
+
+    &.secondary {
+        @include colors_secondary_outline;
+    }
+
+    &.small {
+        padding: $standardSpace;
+        font-size: 12px;
+    }
+
+    &.medium {
+        padding: $standardSpace * 2;
+    }
+
+    &.large {
+        padding: $standardSpace * 2;
+        font-size: 20px;
+    }
+
+    &:hover {
+        @include colors_pDark(0.5);
+    }
+
+    &:active {
+        @include colors_pDark;
+    }
+}

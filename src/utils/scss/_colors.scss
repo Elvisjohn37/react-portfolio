@@ -1,0 +1,29 @@
+$colors_primary: #263238;
+$colors_pLight: #4f5b62;
+$colors_pDark: #000a12;
+
+$colors_secondary: #00838f;
+$colors_sLight: #4fb3bf;
+$colors_sDark: #005662;
+
+$colors_pText: #ececec;
+
+@mixin colors_secondary($opacity: 1) {
+    background-color: rgba($colors_secondary, $opacity);
+    color: $colors_pText;
+}
+
+@mixin colors_primary($opacity: 1) {
+    background-color: rgba($colors_primary, $opacity);
+    color: $colors_pText;
+}
+
+@mixin colors_pDark($opacity: 1) {
+    background-color: rgba($colors_pDark, $opacity);
+    color: $colors_pText;
+}
+
+@mixin colors_secondary_outline($opacity: 1) {
+    border: 1px solid rgba($colors_secondary, $opacity);
+    color: $colors_pText;
+}

@@ -1,0 +1,70 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/helper.scss';
+@import 'src/utils/scss/keyframes.scss';
+
+.projects {
+    height: 100vh;
+    padding-top: $mainNavigationHeight;
+    align-items: center;
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+
+        .introduction {
+            font-family: MontserratMedium;
+            color: darken($colors_pText, 30%);
+            font-size: 12px;
+            padding: $standardSpace * 4;
+
+            .title {
+                color: $colors_pText;
+                font-size: 16px;
+                margin-bottom: $standardSpace * 2;
+            }
+        }
+
+        .content {
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+
+            .websites {
+                width: 100%;
+                box-shadow: 0px 2px 6px rgba($colors_pDark, 0.5);
+                padding: $standardSpace * 4;
+                border-radius: $borderRadius;
+                margin: $standardSpace * 2;
+                @include colors_pDark(0.2);
+                color: $colors_secondary;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                .project {
+                    padding: $standardSpace;
+                    margin: $standardSpace;
+                    font-family: MontserratMedium;
+                    transition: $standardDuration;
+                    border-radius: $borderRadius;
+
+                    &:hover {
+                        @include colors_pDark(0.5);
+                    }
+
+                    img {
+                        min-width: 300px;
+                    }
+
+                    .info {
+                        padding: $standardSpace;
+                        color: darken($colors_pText, 30%);
+                    }
+                }
+            }
+        }
+    }
+}

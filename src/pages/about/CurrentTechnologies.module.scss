@@ -1,0 +1,40 @@
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/colors.scss';
+
+.currentTechnologies {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $standardSpace * 4;
+    text-transform: capitalize;
+
+    svg {
+        height: 24px;
+        color: $colors_pText;
+        fill: $colors_pLight;
+
+        path {
+            transition: $standardDuration;
+            fill: $colors_pLight;
+        }
+
+        &:hover path {
+            fill: $colors_secondary;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        svg {
+            margin: $standardSpace;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

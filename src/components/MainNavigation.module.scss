@@ -1,0 +1,108 @@
+@import 'src/utils/scss/colors.scss';
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+@import 'src/utils/scss/mainSizes.scss';
+
+.MainNavigation {
+    width: 100%;
+    height: $mainNavigationHeight;
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    @include colors_primary;
+    z-index: 1;
+
+    ul {
+        float: right;
+        margin-right: $mainNavigationHeight;
+        padding: $standardSpace;
+        font-family: MinomuRegular;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            height: 100%;
+            line-height: 34px;
+
+            .link {
+                transition: 0.3s;
+                padding: 0 8px * 2;
+                color: $colors_pText;
+                display: block;
+                text-decoration: none;
+            }
+
+            .active {
+                color: $colors_sLight;
+            }
+
+            &:hover .link {
+                color: $colors_secondary;
+            }
+
+            &:active .link {
+                color: $colors_sLight;
+            }
+        }
+        &.scrollDown {
+        }
+
+        &.scrollUp {
+            position: fixed;
+            box-shadow: 0 -8px 20px #000000;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        @include colors_primary;
+    }
+
+    @media screen and (max-width: 402px) {
+        position: absolute;
+        .showMobileMenu {
+            transition: 0.3s;
+            display: block;
+            width: 100%;
+            margin: unset;
+            padding: unset;
+            box-shadow: 0 5px 5px #00000036;
+            background-color: $colors_pDark;
+
+            li {
+                display: block;
+                text-align: center;
+                .link {
+                    padding: $standardSpace * 2;
+                }
+            }
+        }
+
+        ul {
+            display: none;
+        }
+
+        .mobileToggle {
+            display: block !important;
+        }
+    }
+
+    .mobileToggle {
+        padding: $standardSpace * 2;
+        color: $colors_pText;
+        display: none;
+        float: right;
+
+        span {
+            width: 30px;
+            height: 3px;
+            display: block;
+            margin-bottom: 5px;
+            background-color: $colors_pText;
+            border-radius: $borderRadius;
+        }
+
+        &:active span {
+            background-color: $colors_secondary;
+        }
+    }
+}

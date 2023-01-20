@@ -1,0 +1,18 @@
+@import 'src/utils/scss/mainSizes.scss';
+@import 'src/utils/scss/fonts.scss';
+
+.image {
+    padding: $standardSpace;
+    position: relative;
+
+    & > div {
+        position: absolute;
+        display: block;
+        width: 100%;
+    }
+
+    img {
+        border-radius: $borderRadius * 2;
+        max-width: 100px;
+    }
+}
